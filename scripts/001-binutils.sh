@@ -42,7 +42,7 @@ OSVER=$(uname)
 if [ "$(uname -s)" = "Darwin" ]; then
   ## Check if using brew
   if command -v brew &> /dev/null; then
-    TARG_XTRA_OPTS="--with-gmp=$(brew --prefix gmp) --with-mpfr=$(brew --prefix mpfr)"
+    TARG_XTRA_OPTS="--with-gmp=$(brew --prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-system-zlib"
   elif command -v port &> /dev/null; then
   ## Check if using MacPorts
     MACPORT_BASE=$(dirname `port -q contents gmp|grep gmp.h`|sed s#/include##g)
